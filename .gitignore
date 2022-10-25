@@ -1,32 +1,26 @@
-# Prerequisites
-*.d
+#include <iostream>
+using namespace std;
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+int main() {
+    char c;
+    bool isLowercaseVowel, isUppercaseVowel;
 
-# Precompiled Headers
-*.gch
-*.pch
+    cout << "Enter an alphabet: ";
+    cin >> c;
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+    // evaluates to 1 (true) if c is a lowercase vowel
+    isLowercaseVowel = (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
 
-# Fortran module files
-*.mod
-*.smod
+    // evaluates to 1 (true) if c is an uppercase vowel
+    isUppercaseVowel = (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U');
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+    // show error message if c is not an alphabet
+    if (!isalpha(c))
+      printf("Error! Non-alphabetic character.");
+    else if (isLowercaseVowel || isUppercaseVowel)
+        cout << c << " is a vowel.";
+    else
+        cout << c << " is a consonant.";
 
-# Executables
-*.exe
-*.out
-*.app
+    return 0;
+}
